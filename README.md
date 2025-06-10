@@ -1,111 +1,76 @@
-Gelişmiş Güvenli Dosya Transfer Sistemi
+# 🚀 Gelişmiş Güvenli Dosya Transfer Sistemi
 
-Proje Genel Bakışı
+Bu proje, **şifreli iletim**, **kimlik doğrulama** ve **bütünlük doğrulaması** ile güvenli ve verimli dosya transferi sağlayan kapsamlı bir sistem geliştirmeyi amaçlamaktadır.  
+Aynı zamanda düşük seviyeli IP başlık manipülasyonu, ağ performans ölçümleri ve güvenlik analizleri ile bilgisayar ağları, siber güvenlik ve ağ analizi konularında uygulamalı deneyim sunar.
 
-Bu proje, şifreli iletim, kimlik doğrulama ve bütünlük doğrulaması ile güvenli ve verimli dosya transferi sağlayan kapsamlı bir sistem geliştirmeyi amaçlamaktadır. Ağ protokollerinin derinlemesine anlaşılması için düşük seviyeli IP başlık manipülasyonu (TTL, DF bayrağı, sağlama toplamı hesaplaması) entegre edilmiştir. Ayrıca, sistemin farklı ağ koşulları altındaki performansını değerlendirmek amacıyla ağ performansı analizleri (gecikme, bant genişliği, paket kaybı) ve güvenlik analizleri/saldırı simülasyonları gerçekleştirilmiştir.
+---
 
-Proje, bilgisayar ağları, siber güvenlik ve ağ performans analizi konularında uygulamalı bir deneyim sunar.
+## ✨ Özellikler
 
-Özellikler
+### 🔐 Temel Güvenli Dosya Aktarım Özellikleri
+- Ağ üzerinden güvenli dosya gönderme ve alma desteği.
+- Büyük dosyalar için manuel paket parçalama ve alıcıda yeniden birleştirme.
+- SHA-256 hash ile dosya bütünlüğü doğrulaması ve hata algılama.
 
-Bu sistem aşağıdaki temel ve ek özelliklere sahiptir:
+### 🛡️ Güvenlik Mekanizmaları
+- **AES-256-CBC** ile dosya şifreleme.
+- **RSA 2048-bit** ile AES anahtarı değişimi.
+- Önceden paylaşılan token ile istemci kimlik doğrulaması.
 
-Temel Özellikler
+### 🧠 Düşük Seviyeli IP Başlık İşleme
+- TTL, DF bayrağı gibi IP başlıklarının manuel olarak ayarlanması.
+- IP sağlama toplamı manuel hesaplanarak doğrulama yapılması.
+- Paket parçalama ve yeniden birleştirme analizi.
 
-Dosya Aktarım Sistemi:
+### 📡 Ağ Performans Ölçümü
+- RTT (Round Trip Time) ile gecikme analizi.
+- **iPerf3** ile bant genişliği ölçümü.
+- **tc (Traffic Control)** ile ağ tıkanıklığı ve paket kaybı simülasyonu.
+- Farklı ağ ortamlarının karşılaştırmalı performans analizi.
 
-Ağ üzerinden güvenli dosya gönderme ve alma desteği.
+### 🛡️ Güvenlik Analizi ve Saldırı Simülasyonu
+- **Scapy** ile paket yakalama ve analiz.
+- Şifreli veri trafiğinde düz metin kaçağının olmadığını doğrulama.
+- MITM ve paket enjeksiyonu saldırılarının simülasyonu.
+- Yakalanan paketlerin Wireshark ile görüntülenmesi.
 
-Büyük dosyalar için manuel paket parçalanması ve alıcı tarafta yeniden birleştirme.
+### 🎁 Bonus Özellikler
+- Ağ durumuna göre TCP/UDP protokol seçimi (şu an rastgele).
+- Dinamik sıkışıklık kontrolü ile hız adaptasyonu.
+- **Tkinter GUI** ile basit görsel kullanıcı arayüzü.
+- Gelişmiş saldırı simülasyonları ve tespit mekanizmaları.
 
-SHA-256 hash kullanarak bütünlük doğrulaması ve güvenilir hata algılama mekanizmaları.
+---
 
-Güvenlik Mekanizmaları:
+## 🛠️ Kullanılan Teknolojiler
 
-Aktarım sırasında dosyaları korumak için AES-256-CBC simetrik şifrelemesi.
+| Bileşen         | Teknoloji                           |
+|-----------------|--------------------------------------|
+| **Dil**         | Python 3.x                           |
+| **GUI**         | Tkinter                              |
+| **Şifreleme**   | cryptography (AES, RSA, SHA-256)     |
+| **Ağ Araçları** | Scapy, iPerf3, tc, netstat, ping     |
+| **Kütüphaneler**| `os`, `threading`, `socket`, `uuid`, `struct`, vb. |
 
-RSA (2048-bit) asimetrik şifreleme ile AES oturum anahtarı değişimi.
+---
 
-Önceden paylaşılan token ile istemci kimlik doğrulama.
+## ⚙️ Kurulum ve Çalıştırma
 
-Düşük Seviyeli IP Başlık İşleme:
+### 🔧 Gereksinimler
+- Python 3.x
+- `pip install scapy cryptography`
+- Aşağıdaki harici araçlar:
+  - iPerf3 → `sudo apt install iperf3` veya `brew install iperf3`
+  - Wireshark → `sudo apt install wireshark`
+  - tc (Linux sistemlerde yerleşiktir)
 
-IP başlıklarının (TTL, DF bayrağı) manuel olarak değiştirilmesi ve işlenmesi.
+### 🧱 Adımlar
 
-İletimden önce IP sağlama toplamının manuel hesaplanması ve doğrulanması.
-
-Alıcı tarafta paket yeniden birleştirmesinin analizi.
-
-Ağ Performans Ölçümü:
-
-TCP bağlantısı üzerinden Gidiş-Dönüş Süresi (RTT) ile gecikme ölçümü.
-
-iPerf3 entegrasyonu ile bant genişliği ölçümü.
-
-tc (traffic control) kullanarak paket kaybı ve ağ tıkanıklığı simülasyonu.
-
-Farklı ağ koşullarının (Wi-Fi, kablolu, yerel vs. uzak) performans karşılaştırması.
-
-Güvenlik Analizi ve Saldırı Simülasyonu:
-
-Scapy ile paket yakalama ve analizi (Wireshark benzeri).
-
-Şifreli verilerin paket yakalamalarında okunamaz olduğunu doğrulama.
-
-Basit Man-in-the-Middle (MITM) ve paket enjeksiyonu saldırısı simülasyonları.
-
-Yakalanan paketleri Wireshark ile açma yeteneği.
-
-Bonus Özellikler (Uygulama İçi Simülasyonlar)
-
-Hibrit TCP/UDP Anahtarlama Simülasyonu: Ağ koşullarına (ping) göre otomatik protokol seçimi (şu an rastgele).
-
-Dinamik Sıkışıklık Kontrolü Simülasyonu: Verimli bant genişliği kullanımı için hız adaptasyonu.
-
-Grafiksel Kullanıcı Arayüzü (GUI): Dosya aktarım görselleştirmeleri için basit bir arayüz.
-
-Gelişmiş Saldırı Simülasyonları: Daha karmaşık saldırı senaryoları ve tespit mekanizmaları.
-
-Kullanılan Teknolojiler
-
-Programlama Dili: Python 3.x
-
-GUI: Tkinter
-
-Şifreleme: cryptography kütüphanesi (AES, RSA, SHA-256)
-
-Paket Manipülasyonu ve Yakalama: Scapy
-
-Ağ Analizi Araçları: iPerf3, netstat, ping (simüle edilmiş), tc (Linux Traffic Control)
-
-Diğer Python Kütüphaneleri: os, threading, time, math, uuid, random, re, subprocess, socket, struct
-
-Kurulum ve Çalıştırma
-
-Önkoşullar
-
-Python 3.x yüklü olmalı.
-
-Aşağıdaki Python kütüphaneleri pip ile yüklenmelidir:
-
-pip install scapy cryptography
-
-Harici ağ araçları yüklü olmalıdır:
-
-iPerf3: Sisteminizde yüklü olmalı (örn. sudo apt install iperf3 veya brew install iperf3).
-
-Wireshark: Paket yakalama ve analizi için yüklü olmalı (örn. sudo apt install wireshark).
-
-tc (Traffic Control): Linux sistemlerde bulunur, ağ koşullarını simüle etmek için kullanılır.
-
-ip_manipulator.py, security_analyzer.py ve network_analyzer.py gibi bazı modüllerin paket yakalama ve ağ manipülasyonu özellikleri root/administrator yetkileri gerektirebilir (sudo ile çalıştırmak gerekebilir).
-
-Adımlar
-
-Depoyu Klonlayın:
-
+#### 1. Depoyu Klonlayın
+```bash
 git clone https://github.com/kullanici_adiniz/guvenli-dosya-transfer-sistemi.git
 cd guvenli-dosya-transfer-sistemi
+```
 
 Gerekli Python Kütüphanelerini Yükleyin:
 
