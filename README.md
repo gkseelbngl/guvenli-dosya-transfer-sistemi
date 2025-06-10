@@ -1,13 +1,17 @@
 Gelişmiş Güvenli Dosya Transfer Sistemi
-🚀 Proje Genel Bakışı
+
+Proje Genel Bakışı
+
 Bu proje, şifreli iletim, kimlik doğrulama ve bütünlük doğrulaması ile güvenli ve verimli dosya transferi sağlayan kapsamlı bir sistem geliştirmeyi amaçlamaktadır. Ağ protokollerinin derinlemesine anlaşılması için düşük seviyeli IP başlık manipülasyonu (TTL, DF bayrağı, sağlama toplamı hesaplaması) entegre edilmiştir. Ayrıca, sistemin farklı ağ koşulları altındaki performansını değerlendirmek amacıyla ağ performansı analizleri (gecikme, bant genişliği, paket kaybı) ve güvenlik analizleri/saldırı simülasyonları gerçekleştirilmiştir.
 
 Proje, bilgisayar ağları, siber güvenlik ve ağ performans analizi konularında uygulamalı bir deneyim sunar.
 
-✨ Özellikler
+Özellikler
+
 Bu sistem aşağıdaki temel ve ek özelliklere sahiptir:
 
 Temel Özellikler
+
 Dosya Aktarım Sistemi:
 
 Ağ üzerinden güvenli dosya gönderme ve alma desteği.
@@ -22,7 +26,7 @@ Aktarım sırasında dosyaları korumak için AES-256-CBC simetrik şifrelemesi.
 
 RSA (2048-bit) asimetrik şifreleme ile AES oturum anahtarı değişimi.
 
-Önceden paylaşılan token ile istemci kimlik doğrulaması.
+Önceden paylaşılan token ile istemci kimlik doğrulama.
 
 Düşük Seviyeli IP Başlık İşleme:
 
@@ -34,7 +38,7 @@ Alıcı tarafta paket yeniden birleştirmesinin analizi.
 
 Ağ Performans Ölçümü:
 
-TCP bağlantısı üzerinden gidiş-dönüş süresi (RTT) ile gecikme ölçümü.
+TCP bağlantısı üzerinden Gidiş-Dönüş Süresi (RTT) ile gecikme ölçümü.
 
 iPerf3 entegrasyonu ile bant genişliği ölçümü.
 
@@ -53,6 +57,7 @@ Basit Man-in-the-Middle (MITM) ve paket enjeksiyonu saldırısı simülasyonlar�
 Yakalanan paketleri Wireshark ile açma yeteneği.
 
 Bonus Özellikler (Uygulama İçi Simülasyonlar)
+
 Hibrit TCP/UDP Anahtarlama Simülasyonu: Ağ koşullarına (ping) göre otomatik protokol seçimi (şu an rastgele).
 
 Dinamik Sıkışıklık Kontrolü Simülasyonu: Verimli bant genişliği kullanımı için hız adaptasyonu.
@@ -61,7 +66,8 @@ Grafiksel Kullanıcı Arayüzü (GUI): Dosya aktarım görselleştirmeleri için
 
 Gelişmiş Saldırı Simülasyonları: Daha karmaşık saldırı senaryoları ve tespit mekanizmaları.
 
-🛠️ Kullanılan Teknolojiler
+Kullanılan Teknolojiler
+
 Programlama Dili: Python 3.x
 
 GUI: Tkinter
@@ -74,8 +80,10 @@ Ağ Analizi Araçları: iPerf3, netstat, ping (simüle edilmiş), tc (Linux Traf
 
 Diğer Python Kütüphaneleri: os, threading, time, math, uuid, random, re, subprocess, socket, struct
 
-⚙️ Kurulum ve Çalıştırma
+Kurulum ve Çalıştırma
+
 Önkoşullar
+
 Python 3.x yüklü olmalı.
 
 Aşağıdaki Python kütüphaneleri pip ile yüklenmelidir:
@@ -93,6 +101,7 @@ tc (Traffic Control): Linux sistemlerde bulunur, ağ koşullarını simüle etme
 ip_manipulator.py, security_analyzer.py ve network_analyzer.py gibi bazı modüllerin paket yakalama ve ağ manipülasyonu özellikleri root/administrator yetkileri gerektirebilir (sudo ile çalıştırmak gerekebilir).
 
 Adımlar
+
 Depoyu Klonlayın:
 
 git clone https://github.com/kullanici_adiniz/guvenli-dosya-transfer-sistemi.git
@@ -101,7 +110,8 @@ cd guvenli-dosya-transfer-sistemi
 Gerekli Python Kütüphanelerini Yükleyin:
 
 pip install -r requirements.txt
-# (Eğer requirements.txt dosyanız yoksa manuel olarak: pip install scapy cryptography)
+
+(Eğer requirements.txt dosyanız yoksa manuel olarak: pip install scapy cryptography)
 
 Sunucuyu Başlatın:
 Yeni bir terminal açın ve sunucuyu başlatın:
@@ -115,7 +125,8 @@ Başka bir terminal açın ve istemci GUI'sini başlatın:
 
 python client_gui.py
 
-🚀 Kullanım
+Kullanım
+
 İstemci GUI'si üzerinden sunucu IP'sini ve portlarını ayarlayabilir, dosya seçebilir ve aşağıdaki işlemleri gerçekleştirebilirsiniz:
 
 Dosya Gönder: Seçilen dosyayı sunucuya şifreli ve güvenli bir şekilde gönderir.
@@ -134,7 +145,8 @@ Wireshark Aç: Yakalanan capture.pcap dosyasını Wireshark ile açar.
 
 Operasyonlar, GUI'deki ilerleme çubuğu ve log penceresi aracılığıyla izlenebilir.
 
-📁 Proje Yapısı
+Proje Yapısı
+
 .
 ├── client_gui.py          # Tkinter tabanlı istemci arayüzü ve operasyonları
 ├── server.py              # TCP ve UDP bağlantılarını yöneten, dosya alımı yapan sunucu
@@ -145,11 +157,14 @@ Operasyonlar, GUI'deki ilerleme çubuğu ve log penceresi aracılığıyla izlen
 ├── README.md              # Bu dosya
 └── uploads_secure/        # Gelen dosyaların kaydedileceği dizin (sunucu tarafı)
 
-🤝 Katkıda Bulunma
+Katkıda Bulunma
+
 Geliştirmeye katkıda bulunmak isterseniz, lütfen bir pull request açmaktan veya bir issue bildirmekten çekinmeyin.
 
-📄 Lisans
+Lisans
+
 Bu proje, MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına (eğer mevcutsa) bakınız.
 
-✉️ İletişim
+İletişim
+
 Adınız Soyadınız - [E-posta adresiniz] - [LinkedIn Profiliniz (isteğe bağlı)]
