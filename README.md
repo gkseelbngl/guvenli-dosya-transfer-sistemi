@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/db2fd7dd-fafc-4c8b-a681-9ced35f6fb6d)![image](https://github.com/user-attachments/assets/d1da6e46-9e36-4616-a166-f03af60c8ada)# 🚀 Gelişmiş Güvenli Dosya Transfer Sistemi
+# 🚀 Gelişmiş Güvenli Dosya Transfer Sistemi
 
 Bu proje, **şifreli iletim**, **kimlik doğrulama** ve **bütünlük doğrulaması** ile güvenli ve verimli dosya transferi sağlayan kapsamlı bir sistem geliştirmeyi amaçlamaktadır.  
 Aynı zamanda düşük seviyeli IP başlık manipülasyonu, ağ performans ölçümleri ve güvenlik analizleri ile bilgisayar ağları, siber güvenlik ve ağ analizi konularında uygulamalı deneyim sunar.
