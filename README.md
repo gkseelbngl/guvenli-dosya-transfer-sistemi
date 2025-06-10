@@ -90,46 +90,47 @@ python server.py
 python client_gui.py
 ```
 
-Kullanım
+## 🚀 Kullanım
 
 İstemci GUI'si üzerinden sunucu IP'sini ve portlarını ayarlayabilir, dosya seçebilir ve aşağıdaki işlemleri gerçekleştirebilirsiniz:
 
-Dosya Gönder: Seçilen dosyayı sunucuya şifreli ve güvenli bir şekilde gönderir.
+- Dosya Gönder: Dosyayı güvenli ve şifreli olarak sunucuya gönderir.
+- Ping Testi: RTT süresini ölçer.
+- Ağ Analizi: Bant genişliği, gecikme ve paket kaybı testleri yapar.
+- Güvenlik Analizi: Trafik yakalama ve şifreleme etkinliği analizi yapar.
+- MITM Simülasyonu: Man-in-the-Middle saldırısı gerçekleştirir.
+- Paket Enjeksiyonu: Ağa sahte paketler enjekte eder.
+- Wireshark Aç: capture.pcap dosyasını Wireshark ile görüntüler.
 
-Ping Testi: Sunucuya ping atarak RTT (Gidiş-Dönüş Süresi) ölçümü yapar.
+Tüm işlemler GUI’deki ilerleme çubuğu ve log penceresiyle takip edilebilir.
 
-Ağ Analizi: Bant genişliği ve gecikme ölçümleri yapar, ayrıca paket kaybı simülasyonunu test eder.
+## 📁 Proje Yapısı
 
-Güvenlik Analizi: Ağ trafiğini yakalar ve şifreleme etkinliğini (düz metin sızıntısı olup olmadığını) analiz eder.
-
-MITM Simülasyonu: Basit bir Man-in-the-Middle saldırısını simüle eder.
-
-Paket Enjeksiyonu: Ağa sahte paketler enjekte eder.
-
-Wireshark Aç: Yakalanan capture.pcap dosyasını Wireshark ile açar.
-
-Operasyonlar, GUI'deki ilerleme çubuğu ve log penceresi aracılığıyla izlenebilir.
-
-Proje Yapısı
-
+```bash
 .
-├── client_gui.py          # Tkinter tabanlı istemci arayüzü ve operasyonları
-├── server.py              # TCP ve UDP bağlantılarını yöneten, dosya alımı yapan sunucu
-├── ip_manipulator.py      # Düşük seviyeli IP başlığı manipülasyonu ve sağlama toplamı hesaplamaları
-├── network_analyzer.py    # iPerf3, tc ve ping ile ağ performans ölçümleri ve simülasyonları
-├── security_analyzer.py   # Scapy ile paket yakalama, MITM simülasyonu ve güvenlik analizi
-├── requirements.txt       # Proje bağımlılıkları
-├── README.md              # Bu dosya
-└── uploads_secure/        # Gelen dosyaların kaydedileceği dizin (sunucu tarafı)
+├── client_gui.py           # Tkinter tabanlı istemci arayüzü
+├── server.py               # TCP/UDP tabanlı sunucu kodu
+├── ip_manipulator.py       # IP başlık manipülasyonu
+├── network_analyzer.py     # Ağ analiz ve performans ölçümü
+├── security_analyzer.py    # Güvenlik analizleri ve simülasyonları
+├── requirements.txt        # Python bağımlılıkları
+├── README.md               # Proje dökümantasyonu
+└── uploads_secure/         # Alınan dosyaların saklandığı klasör
+```
 
-Katkıda Bulunma
+## 🤝 Katkıda Bulunma
 
-Geliştirmeye katkıda bulunmak isterseniz, lütfen bir pull request açmaktan veya bir issue bildirmekten çekinmeyin.
+Geliştirmeye katkıda bulunmak isterseniz:
 
-Lisans
+- Bir pull request gönderebilir
+- Ya da bir issue oluşturarak bildirimde bulunabilirsiniz.
 
-Bu proje, MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına (eğer mevcutsa) bakınız.
+## 📄 Lisans
 
-İletişim
+Bu proje MIT Lisansı altında lisanslanmıştır.
 
-Adınız Soyadınız - [E-posta adresiniz] - [LinkedIn Profiliniz (isteğe bağlı)]
+## ✉️ İletişim
+
+Göksel Bingöl
+📧 E-posta: gkseelbngl34@gmail.com
+🔗 LinkedIn: [https://www.linkedin.com/in/gkseelbngl/]
