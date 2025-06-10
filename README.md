@@ -129,8 +129,7 @@ Geliştirmeye katkıda bulunmak isterseniz:
 
 Bu proje MIT Lisansı altında lisanslanmıştır.
 
-## ![image](https://github.com/user-attachments/assets/3c8ca063-6c22-44ad-a59f-28eb26f20295)
- Proje Demoları
+## ![image](https://github.com/user-attachments/assets/3c8ca063-6c22-44ad-a59f-28eb26f20295)Proje Demoları
 
 📺 Proje Demo Videosu: https://www.youtube.com/watch?v=KmPX3SUIaqs
 
