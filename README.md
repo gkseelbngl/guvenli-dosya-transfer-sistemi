@@ -72,23 +72,23 @@ git clone https://github.com/kullanici_adiniz/guvenli-dosya-transfer-sistemi.git
 cd guvenli-dosya-transfer-sistemi
 ```
 
-Gerekli Python Kütüphanelerini Yükleyin:
-
+#### 2. Gerekli Python Kütüphanelerini Yükleyin
+```bash
 pip install -r requirements.txt
+# veya manuel olarak:
+pip install scapy cryptography
+```
 
-(Eğer requirements.txt dosyanız yoksa manuel olarak: pip install scapy cryptography)
-
-Sunucuyu Başlatın:
+#### 3. Sunucuyu Başlatın
 Yeni bir terminal açın ve sunucuyu başlatın:
-
+```bash
 python server.py
+```
 
-Sunucu, RSA anahtarları oluşturacak/yükleyecek ve TCP/UDP portlarında (varsayılan 12345 ve 12346) dinlemeye başlayacaktır.
-
-İstemci GUI'sini Başlatın:
-Başka bir terminal açın ve istemci GUI'sini başlatın:
-
+#### 4. İstemci GUI'sini Başlatın
+```bash
 python client_gui.py
+```
 
 Kullanım
 
