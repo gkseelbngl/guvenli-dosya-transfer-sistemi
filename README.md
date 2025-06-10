@@ -131,8 +131,6 @@ Bu proje MIT Lisansı altında lisanslanmıştır.
 
 ## ✉️ İletişim
 
-Göksel Bingöl
-
 📧 E-posta: gkseelbngl34@gmail.com
 
 🔗 LinkedIn: https://www.linkedin.com/in/gkseelbngl/
